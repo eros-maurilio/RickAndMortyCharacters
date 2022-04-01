@@ -37,6 +37,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147606A227F7639B00F3CD35 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				147606A527F763F100F3CD35 /* Application */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		147606A327F763A400F3CD35 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1491367227F634110078C921 /* LaunchScreen.storyboard */,
+				1491367027F634110078C921 /* Assets.xcassets */,
+				1491367527F634110078C921 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		147606A427F763C200F3CD35 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1491366727F6340C0078C921 /* AppDelegate.swift */,
+				1491366927F6340C0078C921 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		147606A527F763F100F3CD35 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				147606A427F763C200F3CD35 /* Delegate */,
+				1491366B27F6340C0078C921 /* ViewController.swift */,
+				1491366D27F6340C0078C921 /* Main.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		1491365B27F6340C0078C921 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +93,8 @@
 		1491366627F6340C0078C921 /* RickAndMortyCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				1491366727F6340C0078C921 /* AppDelegate.swift */,
-				1491366927F6340C0078C921 /* SceneDelegate.swift */,
-				1491366B27F6340C0078C921 /* ViewController.swift */,
-				1491366D27F6340C0078C921 /* Main.storyboard */,
-				1491367027F634110078C921 /* Assets.xcassets */,
-				1491367227F634110078C921 /* LaunchScreen.storyboard */,
-				1491367527F634110078C921 /* Info.plist */,
+				147606A327F763A400F3CD35 /* Resources */,
+				147606A227F7639B00F3CD35 /* Sources */,
 			);
 			path = RickAndMortyCharacters;
 			sourceTree = "<group>";

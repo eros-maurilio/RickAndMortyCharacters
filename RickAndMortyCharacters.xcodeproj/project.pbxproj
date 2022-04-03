@@ -40,6 +40,7 @@
 		147606A227F7639B00F3CD35 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				14F17B0027F9E68F0031443A /* Common */,
 				147606A527F763F100F3CD35 /* Application */,
 			);
 			path = Sources;
@@ -105,6 +106,13 @@
 				14F17AFE27F9E3770031443A /* EndPoint.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		14F17B0027F9E68F0031443A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

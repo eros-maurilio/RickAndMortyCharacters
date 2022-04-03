@@ -6,7 +6,11 @@ struct EndPoint {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "rickandmortyapi.com"
-        components.path = "api/character"
+        components.path = "/api/character/"
+        
+        if let extendedPath = extendedPath {
+            components.path += extendedPath
+        }
         
         guard let queryItem = queryItem else {
             return components.url
@@ -17,9 +21,32 @@ struct EndPoint {
         return components.url
     }
     
-    let queryItem: [URLQueryItem]?
+    private let queryItem: [URLQueryItem]?
+    private let extendedPath: String?
     
-    init(query: [URLQueryItem]? = nil) {
+    private init(query: [URLQueryItem]? = nil, extendedPath: String? = nil) {
         self.queryItem = query
+        self.extendedPath = extendedPath
+    }
+}
+
+extension EndPoint {
+    enum QueryType: String {
+        case status, page
+    }
+    
+    static func requestURLWith(_ queryType: QueryType, query: String) -> EndPoint {
+        var currentQuery: URLQueryItem
+        
+        currentQuery = URLQueryItem(name: queryType.rawValue, value: query)
+        
+        return EndPoint(query: [currentQuery])
+
+    }
+    
+    static func requestCharacterURLWith(id: Int) -> EndPoint {
+        let formatedID = id.description
+
+        return EndPoint(extendedPath: formatedID)
     }
 }

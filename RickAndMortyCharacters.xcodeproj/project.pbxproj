@@ -13,6 +13,7 @@
 		1491367127F634110078C921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1491367027F634110078C921 /* Assets.xcassets */; };
 		1491367427F634110078C921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1491367227F634110078C921 /* LaunchScreen.storyboard */; };
 		14F17AFF27F9E3770031443A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F17AFE27F9E3770031443A /* EndPoint.swift */; };
+		14F17B0727F9F3340031443A /* DataLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F17B0627F9F3340031443A /* DataLoaderManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1491367327F634110078C921 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1491367527F634110078C921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F17AFE27F9E3770031443A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		14F17B0627F9F3340031443A /* DataLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				14F17AFE27F9E3770031443A /* EndPoint.swift */,
+				14F17B0627F9F3340031443A /* DataLoaderManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F17B0727F9F3340031443A /* DataLoaderManager.swift in Sources */,
 				1491366C27F6340C0078C921 /* ViewController.swift in Sources */,
 				1491366827F6340C0078C921 /* AppDelegate.swift in Sources */,
 				14F17AFF27F9E3770031443A /* EndPoint.swift in Sources */,

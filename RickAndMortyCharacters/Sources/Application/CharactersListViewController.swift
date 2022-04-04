@@ -7,6 +7,7 @@ protocol CharactersListDisplayLogic: AnyObject {
 class CharactersListViewController: UIViewController {
     var interactor: CharactersListBusinessLogic?
     var router: (NSObjectProtocol & CharactersListRoutingLogic & CharactersListDataPassing)?
+    var tableView = UITableView()
     
     // MARK: Object lifecycle
     
@@ -36,7 +37,7 @@ class CharactersListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        setupTableView()
     }
 }
 
@@ -60,7 +61,24 @@ private extension CharactersListViewController {
         interactor?.doSomething(request: request)
     }
     
-    func setupTableView() { }
+    func setupTableView() {
+        tableView = UITableView()
+        setupTableViewContraints()
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    func setupTableViewContraints() {
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+    }
 }
 
 
@@ -69,5 +87,19 @@ private extension CharactersListViewController {
 extension CharactersListViewController: CharactersListDisplayLogic {
     func displaySomething(viewModel: CharactersList.Something.ViewModel) {
         //nameTextField.text = viewModel.name
+    }
+}
+
+extension CharactersListViewController: UITableViewDelegate {
+    
+}
+
+extension CharactersListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     UITableViewCell()
     }
 }

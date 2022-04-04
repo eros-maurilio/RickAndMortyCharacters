@@ -38,6 +38,7 @@ class CharactersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupNavigationBar()
     }
 }
 
@@ -66,6 +67,12 @@ private extension CharactersListViewController {
         setupTableViewContraints()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .clear
+    }
+    
+    func setupNavigationBar() {
+        title = "Characters"
+        view.backgroundColor = .orange
     }
     
     func setupTableViewContraints() {

@@ -1,7 +1,7 @@
 import UIKit
 
 protocol CharactersListDisplayLogic: AnyObject {
-    func displaySomething(viewModel: CharactersList.Something.ViewModel)
+    func displaySomething(viewModel: CharactersList.UseCase.ViewModel)
 }
 
 class CharactersListViewController: UIViewController {
@@ -39,6 +39,7 @@ class CharactersListViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupNavigationBar()
+        loadData()
     }
 }
 
@@ -54,12 +55,12 @@ private extension CharactersListViewController {
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
-        router.dataStore = interactor
+//        router.dataStore = interactor
     }
     
-    func doSomething() {
-        let request = CharactersList.Something.Request()
-        interactor?.doSomething(request: request)
+    func loadData() {
+        let request = CharactersList.UseCase.Request()
+        interactor?.getCharactersList(request)
     }
     
     func setupTableView() {
@@ -92,7 +93,7 @@ private extension CharactersListViewController {
 // MARK: - CharactersListDisplayLogic
 
 extension CharactersListViewController: CharactersListDisplayLogic {
-    func displaySomething(viewModel: CharactersList.Something.ViewModel) {
+    func displaySomething(viewModel: CharactersList.UseCase.ViewModel) {
         //nameTextField.text = viewModel.name
     }
 }

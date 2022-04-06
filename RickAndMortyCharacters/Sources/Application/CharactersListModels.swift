@@ -1,6 +1,10 @@
 enum CharactersList {
     
-    enum UseCase {
+    struct Character {
+        let name: String
+    }
+    
+    enum PresentCharacters {
         
         struct Request { }
         
@@ -12,5 +16,13 @@ enum CharactersList {
             let characters: [Character]
         }
         
+    }
+}
+
+// MARK: - Adapter
+
+extension CharactersList.Character {
+    init(from dto: CharacterDTO) {
+        self.init(name: dto.name)
     }
 }

@@ -1,7 +1,7 @@
 import UIKit
 
 protocol CharactersListDisplayLogic: AnyObject {
-    func displaySomething(viewModel: CharactersList.UseCase.ViewModel)
+    func displayCharactersList(viewModel: CharactersList.UseCase.ViewModel)
 }
 
 class CharactersListViewController: UIViewController {
@@ -93,7 +93,7 @@ private extension CharactersListViewController {
 // MARK: - CharactersListDisplayLogic
 
 extension CharactersListViewController: CharactersListDisplayLogic {
-    func displaySomething(viewModel: CharactersList.UseCase.ViewModel) {
+    func displayCharactersList(viewModel: CharactersList.UseCase.ViewModel) {
         //nameTextField.text = viewModel.name
     }
 }

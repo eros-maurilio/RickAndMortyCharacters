@@ -1,5 +1,5 @@
 protocol CharactersListPresentationLogic {
-    func presentCharactersList(_ response: CharactersList.UseCase.Response)
+    func presentCharactersList(_ response: CharactersList.PresentCharacters.Response)
 }
 
 class CharactersListPresenter: CharactersListPresentationLogic {
@@ -7,8 +7,8 @@ class CharactersListPresenter: CharactersListPresentationLogic {
     
     // MARK: Do something
     
-    func presentCharactersList(_ response: CharactersList.UseCase.Response) {
-        let viewModel = CharactersList.UseCase.ViewModel(characters: response.characters)
+    func presentCharactersList(_ response: CharactersList.PresentCharacters.Response) {
+        let viewModel = CharactersList.PresentCharacters.ViewModel(characters: response.characters)
         viewController?.displayCharactersList(viewModel: viewModel)
     }
 }

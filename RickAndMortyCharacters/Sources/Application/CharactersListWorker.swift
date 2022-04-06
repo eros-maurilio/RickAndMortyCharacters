@@ -1,15 +1,18 @@
 import Foundation
 
-struct Character: Decodable {
+struct CharacterDTO: Decodable {
     let name: String
     let id: Int
 }
 
+struct CharactersListResponseDTO: Decodable {
+    let results: [CharacterDTO]
+}
+
 final class CharactersListWorker {
-    typealias ListResult = Result<[Character], NSError>
-    private var model = [Character]()
+    typealias ListResult = Result<CharactersListResponseDTO, NSError>
     
-    func execute(withQuery query: String) -> [Character] {
+    func execute(withQuery query: String, completion: @escaping ([CharacterDTO]) -> Void) {
         let dataLoaderManager = DataLoaderManager()
         
         dataLoaderManager.execute(.requestURLWith(.page, query: query)) { [weak self] (result: ListResult) in
@@ -18,12 +21,10 @@ final class CharactersListWorker {
             
             switch result {
             case let .success(data):
-                self.model = data
-                print(self.model)
+                completion(data.results)
             case let .failure(error):
-                debugPrint(error.localizedDescription)
+                break // TODO completion error
             }
         }
-        return model
     }
 }

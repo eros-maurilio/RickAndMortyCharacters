@@ -8,7 +8,9 @@ enum CharactersList {
             let characters: [Character]
         }
         
-        struct ViewModel { }
+        struct ViewModel {
+            let characters: [Character]
+        }
         
     }
 }

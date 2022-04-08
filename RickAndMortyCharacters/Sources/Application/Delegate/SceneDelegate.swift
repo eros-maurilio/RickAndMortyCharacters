@@ -10,7 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let viewController = CharactersListViewController()
+        let viewController = CharactersListViewFactory.create()
         let navigationController = UINavigationController(rootViewController: viewController)
         
         window.rootViewController = navigationController

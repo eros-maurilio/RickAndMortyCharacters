@@ -1,43 +1,41 @@
 import UIKit
 
+typealias Character = CharactersList.Character
+
 protocol CharactersListDisplayLogic: AnyObject {
-    func displayCharactersList(viewModel: CharactersList.UseCase.ViewModel)
+    func displayCharactersList(viewModel: CharactersList.PresentCharacters.ViewModel)
 }
 
 class CharactersListViewController: UIViewController {
-    var interactor: CharactersListBusinessLogic?
-    var router: (NSObjectProtocol & CharactersListRoutingLogic & CharactersListDataPassing)?
-    var tableView = UITableView()
+    typealias Router = CharactersListRoutingLogic & CharactersListDataPassing
+    private let interactor: CharactersListBusinessLogic
+    private let adapter: CharacterListAdapting
+    private let router: Router
+    
+    private var characterList: CharacterListRendering? { view as? CharacterListRendering }
     
     // MARK: Object lifecycle
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        setupVIP()
-        
+    init(interactor: CharactersListBusinessLogic,
+         adapter: CharacterListAdapting,
+         router: Router) {
+        self.interactor = interactor
+        self.adapter = adapter
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupVIP()
-    }
-    
-    // MARK: Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
+        fatalError("This should only be used programatically")
     }
     
     // MARK: View lifecycle
     
+    override func loadView() {
+        view = CharacterListView(datasource: adapter)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
         setupNavigationBar()
         loadData()
     }
@@ -45,47 +43,14 @@ class CharactersListViewController: UIViewController {
 
 private extension CharactersListViewController {
     
-    func setupVIP() {
-        let viewController = self
-        let interactor = CharactersListInteractor()
-        let presenter = CharactersListPresenter()
-        let router = CharactersListRouter()
-        viewController.interactor = interactor
-        viewController.router = router
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-        router.viewController = viewController
-//        router.dataStore = interactor
-    }
-    
     func loadData() {
-        let request = CharactersList.UseCase.Request()
-        interactor?.getCharactersList(request)
-    }
-    
-    func setupTableView() {
-        tableView = UITableView()
-        setupTableViewContraints()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = .clear
+        let request = CharactersList.PresentCharacters.Request()
+        interactor.getCharactersList(request)
     }
     
     func setupNavigationBar() {
         title = "Characters"
         view.backgroundColor = .orange
-    }
-    
-    func setupTableViewContraints() {
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
-        ])
     }
 }
 
@@ -93,21 +58,10 @@ private extension CharactersListViewController {
 // MARK: - CharactersListDisplayLogic
 
 extension CharactersListViewController: CharactersListDisplayLogic {
-    func displayCharactersList(viewModel: CharactersList.UseCase.ViewModel) {
-        //nameTextField.text = viewModel.name
-    }
-}
-
-extension CharactersListViewController: UITableViewDelegate {
-    
-}
-
-extension CharactersListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     UITableViewCell()
+    func displayCharactersList(viewModel: CharactersList.PresentCharacters.ViewModel) {
+        adapter.configure(characters: viewModel.characters)
+        DispatchQueue.main.async {
+            self.characterList?.reloadData()
+        }
     }
 }

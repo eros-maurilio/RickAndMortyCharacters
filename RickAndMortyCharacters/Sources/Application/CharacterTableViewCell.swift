@@ -24,10 +24,22 @@ class CharacterTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    var cellBackground: UIView = {
+    private lazy var cellBackground: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         return view
+    }()
+    
+    private lazy var chevronIcon: UIImageView = {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 8, height: 11))
+        imageView.image = UIImage(systemName: "chevron.forward")
+        imageView.contentMode = .scaleToFill
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.tintColor = .white
+        
+        return imageView
     }()
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -52,12 +64,13 @@ private extension CharacterTableViewCell {
         contentView.addSubview(cellBackground)
         cellBackground.addSubview(name)
         cellBackground.addSubview(characterImage)
+        cellBackground.addSubview(chevronIcon)
         
         NSLayoutConstraint.activate([
             cellBackground.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             cellBackground.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            cellBackground.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
-            cellBackground.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5)
+            cellBackground.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 15),
+            cellBackground.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15)
         ])
         
         NSLayoutConstraint.activate([
@@ -65,14 +78,20 @@ private extension CharacterTableViewCell {
             characterImage.leftAnchor.constraint(equalTo: cellBackground.leftAnchor, constant: 10),
             characterImage.bottomAnchor.constraint(lessThanOrEqualTo: cellBackground.bottomAnchor, constant: -10),
             characterImage.widthAnchor.constraint(equalToConstant: 50),
-            characterImage.heightAnchor.constraint(equalToConstant: 50)
+            characterImage.heightAnchor.constraint(equalToConstant: 50),
+            characterImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
             name.topAnchor.constraint(equalTo: cellBackground.topAnchor, constant: 10),
-            name.leftAnchor.constraint(equalTo: characterImage.rightAnchor, constant: 10),
-            name.rightAnchor.constraint(equalTo: cellBackground.rightAnchor, constant: -15),
+            name.leftAnchor.constraint(equalTo: characterImage.rightAnchor, constant: 20),
+            name.rightAnchor.constraint(lessThanOrEqualTo: chevronIcon.leftAnchor, constant: -20),
             name.bottomAnchor.constraint(equalTo: cellBackground.bottomAnchor, constant: -10)
+        ])
+        
+        NSLayoutConstraint.activate([
+            chevronIcon.centerYAnchor.constraint(equalTo: characterImage.centerYAnchor),
+            chevronIcon.rightAnchor.constraint(equalTo: cellBackground.rightAnchor, constant: -10),
         ])
     }
     

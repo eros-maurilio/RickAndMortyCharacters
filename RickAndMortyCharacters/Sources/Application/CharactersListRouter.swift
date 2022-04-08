@@ -12,20 +12,17 @@
 
 import UIKit
 
-@objc protocol CharactersListRoutingLogic
-{
+@objc protocol CharactersListRoutingLogic {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol CharactersListDataPassing
-{
-  var dataStore: CharactersListDataStore? { get }
+protocol CharactersListDataPassing {
+//  var dataStore: CharactersListDataStore? { get }
 }
 
-class CharactersListRouter: NSObject, CharactersListRoutingLogic, CharactersListDataPassing
-{
+class CharactersListRouter: NSObject, CharactersListRoutingLogic, CharactersListDataPassing {
   weak var viewController: CharactersListViewController?
-  var dataStore: CharactersListDataStore?
+//  var dataStore: CharactersListDataStore?
   
   // MARK: Routing
   

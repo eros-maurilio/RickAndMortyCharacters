@@ -12,6 +12,8 @@
 		140043842801AF6D000D988D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140043832801AF6D000D988D /* Strings.swift */; };
 		140043862801AF87000D988D /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140043852801AF87000D988D /* UIFont+Extension.swift */; };
 		140043882801B2BE000D988D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140043872801B2BE000D988D /* UIColor+Extension.swift */; };
+		1400438A2801B54C000D988D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140043892801B54C000D988D /* UIView+Extension.swift */; };
+		1400438C2801C0B8000D988D /* UINavigationBarAppearance+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1400438B2801C0B8000D988D /* UINavigationBarAppearance+Extension.swift */; };
 		1491366827F6340C0078C921 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366727F6340C0078C921 /* AppDelegate.swift */; };
 		1491366A27F6340C0078C921 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366927F6340C0078C921 /* SceneDelegate.swift */; };
 		1491366C27F6340C0078C921 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366B27F6340C0078C921 /* ViewController.swift */; };
@@ -23,7 +25,7 @@
 		149BC4B327FB670300BA062B /* CharactersListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AD27FB670300BA062B /* CharactersListModels.swift */; };
 		149BC4B427FB670300BA062B /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AE27FB670300BA062B /* CharactersListViewController.swift */; };
 		149BC4B527FB670300BA062B /* CharactersListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AF27FB670300BA062B /* CharactersListInteractor.swift */; };
-		14B6368427FDEB2D00C26463 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368327FDEB2D00C26463 /* CharacterTableViewCell.swift */; };
+		14B6368427FDEB2D00C26463 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368327FDEB2D00C26463 /* CharacterCell.swift */; };
 		14B6368727FDF10000C26463 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368627FDF10000C26463 /* UITableView+Extension.swift */; };
 		14B6368E27FE020D00C26463 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368D27FE020D00C26463 /* CharacterListView.swift */; };
 		14B6369027FE024600C26463 /* CharactersListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368F27FE024600C26463 /* CharactersListViewFactory.swift */; };
@@ -38,6 +40,8 @@
 		140043832801AF6D000D988D /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		140043852801AF87000D988D /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		140043872801B2BE000D988D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		140043892801B54C000D988D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		1400438B2801C0B8000D988D /* UINavigationBarAppearance+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBarAppearance+Extension.swift"; sourceTree = "<group>"; };
 		1491366427F6340C0078C921 /* RickAndMortyCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1491366727F6340C0078C921 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1491366927F6340C0078C921 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +55,7 @@
 		149BC4AD27FB670300BA062B /* CharactersListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListModels.swift; sourceTree = "<group>"; };
 		149BC4AE27FB670300BA062B /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
 		149BC4AF27FB670300BA062B /* CharactersListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractor.swift; sourceTree = "<group>"; };
-		14B6368327FDEB2D00C26463 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		14B6368327FDEB2D00C26463 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		14B6368627FDF10000C26463 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		14B6368D27FE020D00C26463 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		14B6368F27FE024600C26463 /* CharactersListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewFactory.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				14B6368627FDF10000C26463 /* UITableView+Extension.swift */,
 				140043852801AF87000D988D /* UIFont+Extension.swift */,
 				140043872801B2BE000D988D /* UIColor+Extension.swift */,
+				140043892801B54C000D988D /* UIView+Extension.swift */,
+				1400438B2801C0B8000D988D /* UINavigationBarAppearance+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,7 +192,7 @@
 		14B6368A27FE01D100C26463 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				14B6368327FDEB2D00C26463 /* CharacterTableViewCell.swift */,
+				14B6368327FDEB2D00C26463 /* CharacterCell.swift */,
 				14B6368D27FE020D00C26463 /* CharacterListView.swift */,
 				14B6369127FE026300C26463 /* CharacterListAdapting.swift */,
 			);
@@ -317,9 +323,11 @@
 				149BC4B327FB670300BA062B /* CharactersListModels.swift in Sources */,
 				140043842801AF6D000D988D /* Strings.swift in Sources */,
 				14F17AFF27F9E3770031443A /* EndPoint.swift in Sources */,
+				1400438C2801C0B8000D988D /* UINavigationBarAppearance+Extension.swift in Sources */,
 				1491366A27F6340C0078C921 /* SceneDelegate.swift in Sources */,
-				14B6368427FDEB2D00C26463 /* CharacterTableViewCell.swift in Sources */,
+				14B6368427FDEB2D00C26463 /* CharacterCell.swift in Sources */,
 				14B6368727FDF10000C26463 /* UITableView+Extension.swift in Sources */,
+				1400438A2801B54C000D988D /* UIView+Extension.swift in Sources */,
 				14B6369027FE024600C26463 /* CharactersListViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

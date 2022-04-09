@@ -100,7 +100,7 @@ private extension CharacterTableViewCell {
     }
     
     func setupCellBackground() {
-        cellBackground.backgroundColor = .blue
+        cellBackground.backgroundColor = .deepGreen
         cellBackground.layer.cornerRadius = 10
     }
 }

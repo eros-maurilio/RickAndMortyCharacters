@@ -50,7 +50,7 @@ private extension CharactersListViewController {
     
     func setupNavigationBar() {
         title = "Characters"
-        view.backgroundColor = .orange
+        view.backgroundColor = .paleGreen
     }
 }
 

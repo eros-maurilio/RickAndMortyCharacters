@@ -11,6 +11,7 @@
 		140043812801AECF000D988D /* ShareTech-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1400437F2801AECF000D988D /* ShareTech-Regular.ttf */; };
 		140043842801AF6D000D988D /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140043832801AF6D000D988D /* Strings.swift */; };
 		140043862801AF87000D988D /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140043852801AF87000D988D /* UIFont+Extension.swift */; };
+		140043882801B2BE000D988D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140043872801B2BE000D988D /* UIColor+Extension.swift */; };
 		1491366827F6340C0078C921 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366727F6340C0078C921 /* AppDelegate.swift */; };
 		1491366A27F6340C0078C921 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366927F6340C0078C921 /* SceneDelegate.swift */; };
 		1491366C27F6340C0078C921 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366B27F6340C0078C921 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		1400437F2801AECF000D988D /* ShareTech-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTech-Regular.ttf"; sourceTree = "<group>"; };
 		140043832801AF6D000D988D /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		140043852801AF87000D988D /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		140043872801B2BE000D988D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1491366427F6340C0078C921 /* RickAndMortyCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1491366727F6340C0078C921 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1491366927F6340C0078C921 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				14B6368627FDF10000C26463 /* UITableView+Extension.swift */,
 				140043852801AF87000D988D /* UIFont+Extension.swift */,
+				140043872801B2BE000D988D /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				149BC4B427FB670300BA062B /* CharactersListViewController.swift in Sources */,
+				140043882801B2BE000D988D /* UIColor+Extension.swift in Sources */,
 				14F17B0727F9F3340031443A /* DataLoaderManager.swift in Sources */,
 				14B6368E27FE020D00C26463 /* CharacterListView.swift in Sources */,
 				1491366C27F6340C0078C921 /* ViewController.swift in Sources */,

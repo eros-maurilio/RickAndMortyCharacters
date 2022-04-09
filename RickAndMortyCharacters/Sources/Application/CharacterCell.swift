@@ -1,6 +1,6 @@
 import UIKit
 
-class CharacterTableViewCell: UITableViewCell {
+class CharacterCell: UITableViewCell {
     
     private lazy var name: UILabel = {
         let label = UILabel()
@@ -58,7 +58,7 @@ class CharacterTableViewCell: UITableViewCell {
     }
 }
 
-private extension CharacterTableViewCell {
+private extension CharacterCell {
     
     func setupConstraints() {
         contentView.addSubview(cellBackground)

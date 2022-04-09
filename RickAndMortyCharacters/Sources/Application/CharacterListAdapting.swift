@@ -20,8 +20,8 @@ final class CharacterTableViewAdapter: NSObject, CharacterListAdapting {
         cell(tableView, at: indexPath, forACellDTO: viewModel[indexPath.row].name)
     }
     
-    private func cell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: String) -> CharacterTableViewCell {
-        let cell = tableView.dequeueCell(CharacterTableViewCell.self, indexPath)
+    private func cell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: String) -> CharacterCell {
+        let cell = tableView.dequeueCell(CharacterCell.self, indexPath)
         cell.fill(dto: ACellDTO)
         return cell
     }

@@ -6,7 +6,7 @@ class CharacterTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.font = UIFont.shareTech(size: 19)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
 

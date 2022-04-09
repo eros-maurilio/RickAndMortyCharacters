@@ -7,16 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140043802801AECF000D988D /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1400437E2801AECF000D988D /* ShareTechMono-Regular.ttf */; };
+		140043812801AECF000D988D /* ShareTech-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1400437F2801AECF000D988D /* ShareTech-Regular.ttf */; };
 		1491366827F6340C0078C921 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366727F6340C0078C921 /* AppDelegate.swift */; };
 		1491366A27F6340C0078C921 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366927F6340C0078C921 /* SceneDelegate.swift */; };
 		1491366C27F6340C0078C921 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491366B27F6340C0078C921 /* ViewController.swift */; };
 		1491367127F634110078C921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1491367027F634110078C921 /* Assets.xcassets */; };
 		1491367427F634110078C921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1491367227F634110078C921 /* LaunchScreen.storyboard */; };
+		149BC4B027FB670300BA062B /* CharactersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AA27FB670300BA062B /* CharactersListPresenter.swift */; };
+		149BC4B127FB670300BA062B /* CharactersListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AB27FB670300BA062B /* CharactersListWorker.swift */; };
+		149BC4B227FB670300BA062B /* CharactersListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AC27FB670300BA062B /* CharactersListRouter.swift */; };
+		149BC4B327FB670300BA062B /* CharactersListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AD27FB670300BA062B /* CharactersListModels.swift */; };
+		149BC4B427FB670300BA062B /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AE27FB670300BA062B /* CharactersListViewController.swift */; };
+		149BC4B527FB670300BA062B /* CharactersListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BC4AF27FB670300BA062B /* CharactersListInteractor.swift */; };
+		14B6368427FDEB2D00C26463 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368327FDEB2D00C26463 /* CharacterTableViewCell.swift */; };
+		14B6368727FDF10000C26463 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368627FDF10000C26463 /* UITableView+Extension.swift */; };
+		14B6368E27FE020D00C26463 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368D27FE020D00C26463 /* CharacterListView.swift */; };
+		14B6369027FE024600C26463 /* CharactersListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368F27FE024600C26463 /* CharactersListViewFactory.swift */; };
+		14B6369227FE026300C26463 /* CharacterListAdapting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6369127FE026300C26463 /* CharacterListAdapting.swift */; };
 		14F17AFF27F9E3770031443A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F17AFE27F9E3770031443A /* EndPoint.swift */; };
 		14F17B0727F9F3340031443A /* DataLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F17B0627F9F3340031443A /* DataLoaderManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1400437E2801AECF000D988D /* ShareTechMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTechMono-Regular.ttf"; sourceTree = "<group>"; };
+		1400437F2801AECF000D988D /* ShareTech-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTech-Regular.ttf"; sourceTree = "<group>"; };
 		1491366427F6340C0078C921 /* RickAndMortyCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1491366727F6340C0078C921 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1491366927F6340C0078C921 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +39,17 @@
 		1491367027F634110078C921 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1491367327F634110078C921 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1491367527F634110078C921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		149BC4AA27FB670300BA062B /* CharactersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenter.swift; sourceTree = "<group>"; };
+		149BC4AB27FB670300BA062B /* CharactersListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListWorker.swift; sourceTree = "<group>"; };
+		149BC4AC27FB670300BA062B /* CharactersListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListRouter.swift; sourceTree = "<group>"; };
+		149BC4AD27FB670300BA062B /* CharactersListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListModels.swift; sourceTree = "<group>"; };
+		149BC4AE27FB670300BA062B /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
+		149BC4AF27FB670300BA062B /* CharactersListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractor.swift; sourceTree = "<group>"; };
+		14B6368327FDEB2D00C26463 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		14B6368627FDF10000C26463 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		14B6368D27FE020D00C26463 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		14B6368F27FE024600C26463 /* CharactersListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewFactory.swift; sourceTree = "<group>"; };
+		14B6369127FE026300C26463 /* CharacterListAdapting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListAdapting.swift; sourceTree = "<group>"; };
 		14F17AFE27F9E3770031443A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		14F17B0627F9F3340031443A /* DataLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,6 +65,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1400437D2801AEA8000D988D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1400437F2801AECF000D988D /* ShareTech-Regular.ttf */,
+				1400437E2801AECF000D988D /* ShareTechMono-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		140043822801AF48000D988D /* Strings, Metrics n Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Strings, Metrics n Styles";
+			sourceTree = "<group>";
+		};
 		147606A227F7639B00F3CD35 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +93,8 @@
 		147606A327F763A400F3CD35 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				140043822801AF48000D988D /* Strings, Metrics n Styles */,
+				1400437D2801AEA8000D988D /* Fonts */,
 				1491367227F634110078C921 /* LaunchScreen.storyboard */,
 				1491367027F634110078C921 /* Assets.xcassets */,
 				1491367527F634110078C921 /* Info.plist */,
@@ -70,6 +114,7 @@
 		147606A527F763F100F3CD35 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				149BC4A827FB653200BA062B /* Scenes */,
 				14F17AFD27F9E1250031443A /* Service */,
 				147606A427F763C200F3CD35 /* Delegate */,
 				1491366B27F6340C0078C921 /* ViewController.swift */,
@@ -102,6 +147,63 @@
 			path = RickAndMortyCharacters;
 			sourceTree = "<group>";
 		};
+		149BC4A827FB653200BA062B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				149BC4A927FB669900BA062B /* CharactersList */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		149BC4A927FB669900BA062B /* CharactersList */ = {
+			isa = PBXGroup;
+			children = (
+				14B6368C27FE01DE00C26463 /* Service */,
+				14B6368B27FE01D800C26463 /* Scene */,
+				14B6368A27FE01D100C26463 /* View */,
+				14B6368F27FE024600C26463 /* CharactersListViewFactory.swift */,
+			);
+			name = CharactersList;
+			sourceTree = "<group>";
+		};
+		14B6368527FDF0E500C26463 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				14B6368627FDF10000C26463 /* UITableView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		14B6368A27FE01D100C26463 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14B6368327FDEB2D00C26463 /* CharacterTableViewCell.swift */,
+				14B6368D27FE020D00C26463 /* CharacterListView.swift */,
+				14B6369127FE026300C26463 /* CharacterListAdapting.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		14B6368B27FE01D800C26463 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				149BC4AA27FB670300BA062B /* CharactersListPresenter.swift */,
+				149BC4AD27FB670300BA062B /* CharactersListModels.swift */,
+				149BC4AE27FB670300BA062B /* CharactersListViewController.swift */,
+				149BC4AF27FB670300BA062B /* CharactersListInteractor.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		14B6368C27FE01DE00C26463 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				149BC4AB27FB670300BA062B /* CharactersListWorker.swift */,
+				149BC4AC27FB670300BA062B /* CharactersListRouter.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		14F17AFD27F9E1250031443A /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +216,7 @@
 		14F17B0027F9E68F0031443A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				14B6368527FDF0E500C26463 /* Extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -178,6 +281,8 @@
 			files = (
 				1491367427F634110078C921 /* LaunchScreen.storyboard in Resources */,
 				1491367127F634110078C921 /* Assets.xcassets in Resources */,
+				140043802801AECF000D988D /* ShareTechMono-Regular.ttf in Resources */,
+				140043812801AECF000D988D /* ShareTech-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,11 +293,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149BC4B427FB670300BA062B /* CharactersListViewController.swift in Sources */,
 				14F17B0727F9F3340031443A /* DataLoaderManager.swift in Sources */,
+				14B6368E27FE020D00C26463 /* CharacterListView.swift in Sources */,
 				1491366C27F6340C0078C921 /* ViewController.swift in Sources */,
+				149BC4B227FB670300BA062B /* CharactersListRouter.swift in Sources */,
+				149BC4B027FB670300BA062B /* CharactersListPresenter.swift in Sources */,
 				1491366827F6340C0078C921 /* AppDelegate.swift in Sources */,
+				14B6369227FE026300C26463 /* CharacterListAdapting.swift in Sources */,
+				149BC4B527FB670300BA062B /* CharactersListInteractor.swift in Sources */,
+				149BC4B127FB670300BA062B /* CharactersListWorker.swift in Sources */,
+				149BC4B327FB670300BA062B /* CharactersListModels.swift in Sources */,
 				14F17AFF27F9E3770031443A /* EndPoint.swift in Sources */,
 				1491366A27F6340C0078C921 /* SceneDelegate.swift in Sources */,
+				14B6368427FDEB2D00C26463 /* CharacterTableViewCell.swift in Sources */,
+				14B6368727FDF10000C26463 /* UITableView+Extension.swift in Sources */,
+				14B6369027FE024600C26463 /* CharactersListViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

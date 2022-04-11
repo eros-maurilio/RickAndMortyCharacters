@@ -45,8 +45,9 @@ class CharacterCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func fill(dto: String) {
-        name.text = dto
+    func fill(dto: Character) {
+        name.text = dto.name
+        characterImage.from(url: URL(string: dto.imageURL)!)
     }
 }
 

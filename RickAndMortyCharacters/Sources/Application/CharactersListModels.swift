@@ -2,6 +2,7 @@ enum CharactersList {
     
     struct Character {
         let name: String
+        let imageURL: String
     }
     
     enum PresentCharacters {
@@ -23,6 +24,6 @@ enum CharactersList {
 
 extension CharactersList.Character {
     init(from dto: CharacterDTO) {
-        self.init(name: dto.name)
+        self.init(name: dto.name, imageURL: dto.image)
     }
 }

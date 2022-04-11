@@ -2,6 +2,7 @@ import Foundation
 
 struct CharacterDTO: Decodable {
     let name: String
+    let image: String
     let id: Int
 }
 

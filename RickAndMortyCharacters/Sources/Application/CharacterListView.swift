@@ -7,22 +7,23 @@ protocol CharacterListRendering {
 final class CharacterListView: UIView, CharacterListRendering {
     private let tableView = UITableView()
     
-    init(datasource: UITableViewDataSource, frame: CGRect = .zero) {
+    init(tableViewProtocols: CharacterListAdapting, frame: CGRect = .zero) {
         super.init(frame: frame)
-        setupTableView(datasource: datasource)
+        setupTableView(tableViewProtocols: tableViewProtocols)
         rowSetup()
-
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupTableView(datasource: UITableViewDataSource) {
+    private func setupTableView(tableViewProtocols: CharacterListAdapting) {
         setupTableViewContraints()
-        tableView.dataSource = datasource
+        tableView.dataSource = tableViewProtocols
+        tableView.delegate = tableViewProtocols
         tableView.backgroundColor = .clear
         tableView.register(CharacterCell.self)
+        tableView.register(LoadingCell.self)
     }
     
     private func setupTableViewContraints() {
@@ -42,7 +43,6 @@ final class CharacterListView: UIView, CharacterListRendering {
     }
     
     func rowSetup() {
-//        tableView.sectionHeaderHeight = 50
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none

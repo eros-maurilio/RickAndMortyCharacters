@@ -32,22 +32,16 @@ class CharactersListViewController: UIViewController {
     // MARK: View lifecycle
     
     override func loadView() {
-        view = CharacterListView(datasource: adapter)
+        view = CharacterListView(tableViewProtocols: adapter)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        loadData()
     }
 }
 
 private extension CharactersListViewController {
-    
-    func loadData() {
-        let request = CharactersList.PresentCharacters.Request()
-        interactor.getCharactersList(request)
-    }
-    
     func setupNavigationBar() {
         title = "Characters"
         view.backgroundColor = .paleGreen
@@ -63,5 +57,21 @@ extension CharactersListViewController: CharactersListDisplayLogic {
         DispatchQueue.main.async {
             self.characterList?.reloadData()
         }
+    }
+}
+
+protocol CharactersViewDelegateProtocol {
+    func loadData()
+    func shouldAnimateLoading() -> Bool
+}
+
+extension CharactersListViewController: CharactersViewDelegateProtocol {
+    func loadData() {
+        let request = CharactersList.PresentCharacters.Request()
+        interactor.getCharactersList(request)
+    }
+    
+    func shouldAnimateLoading() -> Bool {
+        interactor.shouldAnimate
     }
 }

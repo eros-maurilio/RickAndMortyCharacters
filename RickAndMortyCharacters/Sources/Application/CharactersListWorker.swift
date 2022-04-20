@@ -6,23 +6,25 @@ struct CharacterDTO: Decodable {
     let id: Int
 }
 
+struct Info: Decodable {
+    let pages: Int
+}
+
 struct CharactersListResponseDTO: Decodable {
     let results: [CharacterDTO]
+    let info: Info
 }
 
 final class CharactersListWorker {
     typealias ListResult = Result<CharactersListResponseDTO, NSError>
     
-    func execute(withQuery query: String, completion: @escaping ([CharacterDTO]) -> Void) {
+    func execute(withQuery query: String, completion: @escaping (CharactersListResponseDTO) -> Void) {
         let dataLoaderManager = DataLoaderManager()
         
         dataLoaderManager.execute(.requestURLWith(.page, query: query)) { [weak self] (result: ListResult) in
-                    
-            guard let self = self else { return }
-            
             switch result {
             case let .success(data):
-                completion(data.results)
+                completion(data)
             case let .failure(error):
                 break // TODO completion error
             }

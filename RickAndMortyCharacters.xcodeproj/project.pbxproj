@@ -30,6 +30,9 @@
 		14B6368E27FE020D00C26463 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368D27FE020D00C26463 /* CharacterListView.swift */; };
 		14B6369027FE024600C26463 /* CharactersListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6368F27FE024600C26463 /* CharactersListViewFactory.swift */; };
 		14B6369227FE026300C26463 /* CharacterListAdapting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6369127FE026300C26463 /* CharacterListAdapting.swift */; };
+		14D1518B2900159F0052AFEE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1518A2900159E0052AFEE /* UIImageView+Extension.swift */; };
+		14D1518D290015BC0052AFEE /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1518C290015BC0052AFEE /* LoadingCell.swift */; };
+		14D15190290016070052AFEE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1518F290016070052AFEE /* ImageCache.swift */; };
 		14F17AFF27F9E3770031443A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F17AFE27F9E3770031443A /* EndPoint.swift */; };
 		14F17B0727F9F3340031443A /* DataLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F17B0627F9F3340031443A /* DataLoaderManager.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +63,9 @@
 		14B6368D27FE020D00C26463 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		14B6368F27FE024600C26463 /* CharactersListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewFactory.swift; sourceTree = "<group>"; };
 		14B6369127FE026300C26463 /* CharacterListAdapting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListAdapting.swift; sourceTree = "<group>"; };
+		14D1518A2900159E0052AFEE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		14D1518C290015BC0052AFEE /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		14D1518F290016070052AFEE /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		14F17AFE27F9E3770031443A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		14F17B0627F9F3340031443A /* DataLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoaderManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +189,7 @@
 				14B6368627FDF10000C26463 /* UITableView+Extension.swift */,
 				140043852801AF87000D988D /* UIFont+Extension.swift */,
 				140043872801B2BE000D988D /* UIColor+Extension.swift */,
+				14D1518A2900159E0052AFEE /* UIImageView+Extension.swift */,
 				140043892801B54C000D988D /* UIView+Extension.swift */,
 				1400438B2801C0B8000D988D /* UINavigationBarAppearance+Extension.swift */,
 			);
@@ -193,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				14B6368327FDEB2D00C26463 /* CharacterCell.swift */,
+				14D1518C290015BC0052AFEE /* LoadingCell.swift */,
 				14B6368D27FE020D00C26463 /* CharacterListView.swift */,
 				14B6369127FE026300C26463 /* CharacterListAdapting.swift */,
 			);
@@ -219,6 +227,14 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
+		14D1518E290016070052AFEE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				14D1518F290016070052AFEE /* ImageCache.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		14F17AFD27F9E1250031443A /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +247,7 @@
 		14F17B0027F9E68F0031443A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				14D1518E290016070052AFEE /* UI */,
 				14B6368527FDF0E500C26463 /* Extensions */,
 			);
 			path = Common;
@@ -310,6 +327,7 @@
 			files = (
 				149BC4B427FB670300BA062B /* CharactersListViewController.swift in Sources */,
 				140043882801B2BE000D988D /* UIColor+Extension.swift in Sources */,
+				14D1518D290015BC0052AFEE /* LoadingCell.swift in Sources */,
 				14F17B0727F9F3340031443A /* DataLoaderManager.swift in Sources */,
 				14B6368E27FE020D00C26463 /* CharacterListView.swift in Sources */,
 				1491366C27F6340C0078C921 /* ViewController.swift in Sources */,
@@ -325,7 +343,9 @@
 				14F17AFF27F9E3770031443A /* EndPoint.swift in Sources */,
 				1400438C2801C0B8000D988D /* UINavigationBarAppearance+Extension.swift in Sources */,
 				1491366A27F6340C0078C921 /* SceneDelegate.swift in Sources */,
+				14D15190290016070052AFEE /* ImageCache.swift in Sources */,
 				14B6368427FDEB2D00C26463 /* CharacterCell.swift in Sources */,
+				14D1518B2900159F0052AFEE /* UIImageView+Extension.swift in Sources */,
 				14B6368727FDF10000C26463 /* UITableView+Extension.swift in Sources */,
 				1400438A2801B54C000D988D /* UIView+Extension.swift in Sources */,
 				14B6369027FE024600C26463 /* CharactersListViewFactory.swift in Sources */,

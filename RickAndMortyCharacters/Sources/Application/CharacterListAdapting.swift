@@ -68,6 +68,11 @@ final class CharacterTableViewAdapter: NSObject, CharacterListAdapting {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.displayCharacterDetails(character: viewModel[indexPath.row])
+        print(viewModel[indexPath.row])
+    }
+    
     private func characterCell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: Character) -> CharacterCell {
         let cell = tableView.dequeueCell(CharacterCell.self, indexPath)
         cell.fill(dto: ACellDTO)

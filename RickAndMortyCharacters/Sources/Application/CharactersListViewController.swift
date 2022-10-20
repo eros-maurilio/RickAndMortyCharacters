@@ -7,10 +7,9 @@ protocol CharactersListDisplayLogic: AnyObject {
 }
 
 class CharactersListViewController: UIViewController {
-    typealias Router = CharactersListRoutingLogic & CharactersListDataPassing
     private let interactor: CharactersListBusinessLogic
     private let adapter: CharacterListAdapting
-    private let router: Router
+    private let router: CharactersListRouter
     
     private var characterList: CharacterListRendering? { view as? CharacterListRendering }
     
@@ -18,7 +17,7 @@ class CharactersListViewController: UIViewController {
     
     init(interactor: CharactersListBusinessLogic,
          adapter: CharacterListAdapting,
-         router: Router) {
+         router: CharactersListRouter) {
         self.interactor = interactor
         self.adapter = adapter
         self.router = router
@@ -61,11 +60,17 @@ extension CharactersListViewController: CharactersListDisplayLogic {
 }
 
 protocol CharactersViewDelegateProtocol {
+    func displayCharacterDetails(character: Character)
     func loadData()
     func shouldAnimateLoading() -> Bool
 }
 
 extension CharactersListViewController: CharactersViewDelegateProtocol {
+    
+    func displayCharacterDetails(character: Character) {
+        router.routeToCharacterDetail(character)
+    }
+    
     func loadData() {
         let request = CharactersList.PresentCharacters.Request()
         interactor.getCharactersList(request)

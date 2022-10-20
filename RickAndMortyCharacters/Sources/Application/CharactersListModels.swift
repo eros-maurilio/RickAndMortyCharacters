@@ -1,6 +1,7 @@
 enum CharactersList {
     
     struct Character {
+        let id: Int
         let name: String
         let imageURL: String
     }
@@ -16,7 +17,6 @@ enum CharactersList {
         struct ViewModel {
             let characters: [Character]
         }
-        
     }
 }
 
@@ -24,6 +24,6 @@ enum CharactersList {
 
 extension CharactersList.Character {
     init(from dto: CharacterDTO) {
-        self.init(name: dto.name, imageURL: dto.image)
+        self.init(id: dto.id, name: dto.name, imageURL: dto.image)
     }
 }

@@ -9,16 +9,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         UINavigationBarAppearance().customAppearance()
-        
+        let navigationController = UINavigationController()
+
+        let coordinator = MainCoordinator()
+        coordinator.navigationController = navigationController
+
         let window = UIWindow(windowScene: windowScene)
-        let viewController = CharactersListViewFactory.create()
-        let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.applyShadow()
-        
         window.rootViewController = navigationController
-        
         self.window = window
         window.makeKeyAndVisible()
+        
+        coordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) { }

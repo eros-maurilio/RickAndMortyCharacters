@@ -1,7 +1,7 @@
 import UIKit
 
 enum CharactersListViewFactory {
-    static func create() -> UIViewController {
+    static func create(coordinator: MainCoordinator) -> UIViewController {
         
         let router = CharactersListRouter()
         let interactor = CharactersListInteractor()
@@ -13,7 +13,7 @@ enum CharactersListViewFactory {
         interactor.presenter = presenter
         adapter.injectDelegate(viewController)
         presenter.viewController = viewController
-        router.viewController = viewController
+        router.coordinator = coordinator
         return viewController
     }
 }

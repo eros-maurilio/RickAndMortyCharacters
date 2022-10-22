@@ -60,7 +60,6 @@ final class CharacterTableViewAdapter: NSObject, CharacterListAdapting {
         if section == .loading {
             delegate?.loadData()
             shouldLoad = delegate!.shouldAnimateLoading()
-            print(shouldLoad)
         }
         
         if indexPath.row == penultRow {
@@ -69,8 +68,7 @@ final class CharacterTableViewAdapter: NSObject, CharacterListAdapting {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.displayCharacterDetails(character: viewModel[indexPath.row])
-        print(viewModel[indexPath.row])
+        delegate?.displayCharacterDetails(characterID: viewModel[indexPath.row].id)
     }
     
     private func characterCell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: Character) -> CharacterCell {

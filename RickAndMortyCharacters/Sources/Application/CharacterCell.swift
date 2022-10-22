@@ -15,6 +15,7 @@ class CharacterCell: UITableViewCell {
     private lazy var characterImage: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         imageView.image = UIImage(named: "BethSmith")
+        imageView.backgroundColor = .paleGreen
         imageView.contentMode = .scaleAspectFill
         imageView.applyCornerRadius(10)
         imageView.clipsToBounds = true

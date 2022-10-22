@@ -60,15 +60,15 @@ extension CharactersListViewController: CharactersListDisplayLogic {
 }
 
 protocol CharactersViewDelegateProtocol {
-    func displayCharacterDetails(character: Character)
+    func displayCharacterDetails(characterID: Int)
     func loadData()
     func shouldAnimateLoading() -> Bool
 }
 
 extension CharactersListViewController: CharactersViewDelegateProtocol {
     
-    func displayCharacterDetails(character: Character) {
-        router.routeToCharacterDetail(character)
+    func displayCharacterDetails(characterID: Int) {
+        router.routeToCharacterDetail(characterID)
     }
     
     func loadData() {

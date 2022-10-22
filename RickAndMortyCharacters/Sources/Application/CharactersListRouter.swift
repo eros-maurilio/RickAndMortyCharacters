@@ -2,14 +2,14 @@ import UIKit
 
 protocol CharacterListRouterProtocol {
     var coordinator: MainCoordinator? { get }
-    func routeToCharacterDetail(_ character: Character)
+    func routeToCharacterDetail(_ characterID: Int)
 }
 
 class CharactersListRouter: CharacterListRouterProtocol {
     var coordinator: MainCoordinator?
     
-    func routeToCharacterDetail(_ character: Character) {
-        coordinator?.navigateToCharacterDetail(character)
+    func routeToCharacterDetail(_ characterID: Int) {
+        coordinator?.navigateToCharacterDetail(characterID)
     }
     
     // MARK: Navigation

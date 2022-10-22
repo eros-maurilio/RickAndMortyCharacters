@@ -21,11 +21,12 @@ final class CharactersListWorker {
     func execute(withQuery query: String, completion: @escaping (CharactersListResponseDTO) -> Void) {
         let dataLoaderManager = DataLoaderManager()
         
-        dataLoaderManager.execute(.requestURLWith(.page, query: query)) { [weak self] (result: ListResult) in
+        dataLoaderManager.execute(.requestURLWith(.page, query: query)) { (result: ListResult) in
             switch result {
             case let .success(data):
                 completion(data)
             case let .failure(error):
+                debugPrint(error)
                 break // TODO completion error
             }
         }

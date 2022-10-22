@@ -32,7 +32,6 @@ final class CharactersListInteractor: CharactersListBusinessLogic {
     
     private func getCurrentPage() -> String {
         currentPage += 1
-        debugPrint(currentPage)
         return String(currentPage)
     }
 }

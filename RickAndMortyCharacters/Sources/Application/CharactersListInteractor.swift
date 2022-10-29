@@ -4,22 +4,21 @@ protocol CharactersListBusinessLogic {
 }
 
 final class CharactersListInteractor: CharactersListBusinessLogic {
+    
     var presenter: CharactersListPresentationLogic?
     var charactersListWorker = CharactersListWorker()
     var charactersList = [CharacterDTO]()
-    var maxPage = 0
+    var maxPage: Int = .zero
     var canLoad = true
     var shouldAnimate: Bool { currentPage < maxPage }
-    var currentPage = 0
-    
-    // MARK: Do something
+    var currentPage: Int = .zero
     
     func getCharactersList(_ request: CharactersList.PresentCharacters.Request) {
         guard canLoad else { return }
         if maxPage == currentPage { canLoad = false }
         canLoad = false
         
-        charactersListWorker.execute(withQuery: getCurrentPage()) { [weak self] characters in
+        charactersListWorker.execute(withQuery: getAndIncrementCurrentPage()) { [weak self] characters in
             
             guard let self = self else { return }
             
@@ -30,7 +29,7 @@ final class CharactersListInteractor: CharactersListBusinessLogic {
         }
     }
     
-    private func getCurrentPage() -> String {
+    private func getAndIncrementCurrentPage() -> String {
         currentPage += 1
         return String(currentPage)
     }

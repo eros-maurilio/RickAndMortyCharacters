@@ -1,6 +1,7 @@
 import UIKit
 
 final class MainCoordinator: Coordinator {
+    
     var navigationController: UINavigationController?
     
     func start() {

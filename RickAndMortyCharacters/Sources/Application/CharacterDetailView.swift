@@ -13,6 +13,7 @@ final class CharacterDetailView: UIView {
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
@@ -54,7 +55,7 @@ final class CharacterDetailView: UIView {
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .neonGreen
-        label.font = UIFont.shareTech(size: 40)
+        label.font = .shareTech(size: 40)
         label.numberOfLines = 0
         label.textAlignment = .center
         label.applyShadow()
@@ -83,7 +84,7 @@ final class CharacterDetailView: UIView {
     lazy var cretedLabel: UILabel = {
         let label = UILabel()
         label.textColor = .paleGreen
-        label.font = UIFont.shareTechMono(size: 18)
+        label.font = .shareTechMono(size: 18)
         label.numberOfLines = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false

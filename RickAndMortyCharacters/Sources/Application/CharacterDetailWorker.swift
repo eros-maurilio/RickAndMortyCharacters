@@ -1,18 +1,5 @@
 import Foundation
 
-struct CharacterDetailDTO: Decodable {
-    let id: Int
-    let name: String
-    let status: String
-    let species: String?
-    let type: String?
-    let gender: String?
-    let origin: Origin?
-    let location: Location?
-    let image: String
-    let created: String
-}
-
 struct Origin: Decodable {
     let name: String
 }
@@ -21,20 +8,29 @@ struct Location: Decodable {
     let name: String
 }
 
-struct CharacterDetailResponseDTO: Decodable {
-    let result: CharacterDetailDTO
-}
 
 final class CharacterDetailWorker {
-    typealias CharacterDetailResult = Result<CharacterDetailDTO, NSError>
+    typealias CharacterDetailResult = Result<[CharacterData], CacheError>
     
-    func execute(withID id: Int, completion: @escaping (CharacterDetailDTO) -> Void) {
-        let dataLoaderManager = NetworkDataLoaderManager()
+    func execute(withID id: Int, completion: @escaping (CharacterDTO) -> Void) {
+        let localLoaderManager = LocalDataLoaderManager()
         
-        dataLoaderManager.execute(.requestCharacterURLWith(id: id)) { (result: CharacterDetailResult) in
+        localLoaderManager.executeWithId(String(id)) { (result: CharacterDetailResult) in
             switch result {
             case let .success(data):
-                completion(data)
+                guard let character = data.first else { return }
+                let dto = CharacterDTO(id: Int(character.characterId ?? "0") ?? 0,
+                                       name: character.name ?? "",
+                                       status: character.status ?? "",
+                                       species: character.specie ?? "",
+                                       type: character.type ?? "",
+                                       gender: character.gender ?? "",
+                                       origin: Origin(name: character.originName ?? ""),
+                                       location: Location(name: character.locationName ?? ""),
+                                       image: character.image ?? "",
+                                       created: character.created ?? "",
+                                       endpoint: character.endpoint)
+                completion(dto)
             case let .failure(error):
                 debugPrint(error)
                 break

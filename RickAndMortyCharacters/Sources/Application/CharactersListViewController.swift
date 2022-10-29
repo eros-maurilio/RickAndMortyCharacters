@@ -31,11 +31,13 @@ class CharactersListViewController: UIViewController {
     // MARK: View lifecycle
     
     override func loadView() {
+        super.loadView()
         view = CharacterListView(tableViewProtocols: adapter)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
         setupNavigationBar()
     }
 }
@@ -60,15 +62,15 @@ extension CharactersListViewController: CharactersListDisplayLogic {
 }
 
 protocol CharactersViewDelegateProtocol {
-    func displayCharacterDetails(character: Character)
+    func displayCharacterDetails(characterID: Int)
     func loadData()
     func shouldAnimateLoading() -> Bool
 }
 
 extension CharactersListViewController: CharactersViewDelegateProtocol {
     
-    func displayCharacterDetails(character: Character) {
-        router.routeToCharacterDetail(character)
+    func displayCharacterDetails(characterID: Int) {
+        router.routeToCharacterDetail(characterID)
     }
     
     func loadData() {

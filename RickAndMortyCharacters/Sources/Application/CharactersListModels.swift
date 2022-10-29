@@ -24,6 +24,8 @@ enum CharactersList {
 
 extension CharactersList.Character {
     init(from dto: CharacterDTO) {
-        self.init(id: dto.id, name: dto.name, imageURL: dto.image)
+        self.init(id: dto.id,
+                  name: dto.name,
+                  imageURL: dto.image)
     }
 }

@@ -2,6 +2,8 @@ import Foundation
 
 final class NetworkDataLoaderManager {
     
+    #warning("TO DO: error handler ")
+    
     private var sharedSession: URLSession { URLSession.shared }
     
     func execute<T: Decodable>(_ endPoint: EndPoint, completion: @escaping(Result<T, NSError>) -> Void) {

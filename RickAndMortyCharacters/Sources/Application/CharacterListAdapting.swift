@@ -12,7 +12,7 @@ enum TableSectionType: Int {
 }
 
 final class CharacterTableViewAdapter: NSObject, CharacterListAdapting {
-    private var rowLimit = 0
+    private var rowLimit: Int = .zero
     private var viewModel = [Character]()
     private var delegate: CharactersViewDelegateProtocol?
     private var shouldLoad = true
@@ -28,13 +28,13 @@ final class CharacterTableViewAdapter: NSObject, CharacterListAdapting {
     func numberOfSections(in tableView: UITableView) -> Int { TableSectionType.sectionsCount() }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let listSection = TableSectionType(rawValue: section) else { return 0 }
+        guard let listSection = TableSectionType(rawValue: section) else { return .zero }
         
         switch listSection {
         case .characterRow:
             return viewModel.count
         case .loading:
-            return viewModel.count >= rowLimit ? 1 : 0
+            return viewModel.count >= rowLimit ? 1 : .zero
         }
     }
     
@@ -48,7 +48,6 @@ final class CharacterTableViewAdapter: NSObject, CharacterListAdapting {
             let cell = loadingCell(tableView, cellForRowAt: indexPath)
             shouldLoad ? cell.startLoading() : cell.stopLoading()
             return cell
-
         }
     }
     
@@ -58,13 +57,11 @@ final class CharacterTableViewAdapter: NSObject, CharacterListAdapting {
         let penultRow = viewModel.count - 1
         
         if section == .loading {
-            delegate?.loadData()
             shouldLoad = delegate!.shouldAnimateLoading()
+            if shouldLoad { delegate?.loadData() }
         }
         
-        if indexPath.row == penultRow {
-            rowLimit = indexPath.row
-        }
+        if indexPath.row == penultRow { rowLimit = indexPath.row }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

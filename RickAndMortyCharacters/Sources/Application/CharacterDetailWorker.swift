@@ -29,10 +29,9 @@ final class CharacterDetailWorker {
     typealias CharacterDetailResult = Result<CharacterDetailDTO, NSError>
     
     func execute(withID id: Int, completion: @escaping (CharacterDetailDTO) -> Void) {
-        let dataLoaderManager = DataLoaderManager()
+        let dataLoaderManager = NetworkDataLoaderManager()
         
         dataLoaderManager.execute(.requestCharacterURLWith(id: id)) { (result: CharacterDetailResult) in
-            
             switch result {
             case let .success(data):
                 completion(data)

@@ -30,7 +30,7 @@ enum CharacterDetail {
 // MARK: - Adapter
 
 extension CharacterDetail.Character {
-    init(from dto: CharacterDetailDTO) {
+    init(from dto: CharacterDTO) {
         self.init(id: dto.id,
                   name: dto.name,
                   status: dto.status,

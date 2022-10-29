@@ -31,11 +31,13 @@ class CharactersListViewController: UIViewController {
     // MARK: View lifecycle
     
     override func loadView() {
+        super.loadView()
         view = CharacterListView(tableViewProtocols: adapter)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
         setupNavigationBar()
     }
 }

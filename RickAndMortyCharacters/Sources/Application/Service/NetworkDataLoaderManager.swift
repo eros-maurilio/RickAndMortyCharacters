@@ -1,10 +1,7 @@
 import Foundation
 
-protocol DataLoaderManagerProtocol: AnyObject {
-    func execute<T: Decodable>(_ endPoint: EndPoint, completion: @escaping(Result<T, NSError>) -> Void)
-}
-
-final class DataLoaderManager: DataLoaderManagerProtocol {
+final class NetworkDataLoaderManager {
+    
     private var sharedSession: URLSession { URLSession.shared }
     
     func execute<T: Decodable>(_ endPoint: EndPoint, completion: @escaping(Result<T, NSError>) -> Void) {

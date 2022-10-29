@@ -264,6 +264,17 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
+		14C75A18290D8C7900B21310 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				1491366B27F6340C0078C921 /* CharacterDetailViewController.swift */,
+				14D3AD2F2901CBF300C43845 /* CharacterDetailInteractor.swift */,
+				14D3AD312901CD5A00C43845 /* CharacterDetailModel.swift */,
+				14D3AD332901DC2500C43845 /* CharacterDetailPresenter.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
 		14D1518E290016070052AFEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,12 +296,9 @@
 			isa = PBXGroup;
 			children = (
 				14D3AD2C2901AE9B00C43845 /* Service */,
-				1491366B27F6340C0078C921 /* CharacterDetailViewController.swift */,
+				14C75A18290D8C7900B21310 /* Scene */,
 				14D3AD3529022DF000C43845 /* View */,
 				14D3AD2A2901AB9500C43845 /* CharacterDetailViewFactory.swift */,
-				14D3AD2F2901CBF300C43845 /* CharacterDetailInteractor.swift */,
-				14D3AD312901CD5A00C43845 /* CharacterDetailModel.swift */,
-				14D3AD332901DC2500C43845 /* CharacterDetailPresenter.swift */,
 			);
 			name = CharacterDetail;
 			sourceTree = "<group>";
